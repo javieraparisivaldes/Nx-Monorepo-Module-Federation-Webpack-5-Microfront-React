@@ -1,0 +1,73 @@
+{
+  "root": "apps/callejero",
+  "sourceRoot": "apps/callejero/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/callejero",
+        "index": "apps/callejero/src/index.html",
+        "baseHref": "/",
+        "main": "apps/callejero/src/main.tsx",
+        "polyfills": "apps/callejero/src/polyfills.ts",
+        "tsConfig": "apps/callejero/tsconfig.app.json",
+        "assets": [
+          "apps/callejero/src/favicon.ico",
+          "apps/callejero/src/assets"
+        ],
+        "styles": ["apps/callejero/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/callejero/src/environments/environment.ts",
+              "with": "apps/callejero/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "callejero:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "callejero:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/callejero/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/callejero"],
+      "options": {
+        "jestConfig": "apps/callejero/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
