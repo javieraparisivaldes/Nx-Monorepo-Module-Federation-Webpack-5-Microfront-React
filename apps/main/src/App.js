@@ -25,7 +25,7 @@ const App = () => {
           }}
         >
           <h1>HOST</h1>
-          HOST ONLY SUPPORTS LIVE RELOAD. GO TO http://localhost:3001 to try out
+          HOST ONLY SUPPORTS LIVE RELOAD. GO TO http://localhost:3001 or http://localhost:3003 to try out
           HMR
         </div>
         <nav>
@@ -34,16 +34,16 @@ const App = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/callejeromaps">Maps</Link>
+              <Link to="/callejeromaps">Maps (Callejero MicroFront)</Link>
             </li>
             <li>
-              <Link to="/callejerocars">Cars</Link>
+              <Link to="/callejerocars">Cars (Callejero MicroFront)</Link>
             </li>
             <li>
-              <Link to="/callejeromain">CallejeroMain</Link>, to try alone <a href="http://localhost:3001" target="_blank">http://localhost:3001</a>
+              <Link to="/callejeromain">Main (Callejero MicroFront)</Link>, to try alone <a href="http://localhost:3001" target="_blank">http://localhost:3001</a>
             </li>
             <li>
-              <Link to="/usersmain">UsersMain</Link>, to try alone <a href="http://localhost:3003" target="_blank">http://localhost:3003</a>
+              <Link to="/usersmain">Main (Users MicroFront)</Link>, to try alone <a href="http://localhost:3003" target="_blank">http://localhost:3003</a>
             </li>
           </ul>
         </nav>
