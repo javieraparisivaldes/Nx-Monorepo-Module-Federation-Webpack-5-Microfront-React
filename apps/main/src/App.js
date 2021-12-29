@@ -5,6 +5,7 @@ import {
   Route,
   Link,
 } from "libs/react-router-dom";
+import "./app.style.css"
 
 const CallejeroMaps = React.lazy(() => import("microCallejero/Maps"));
 const CallejeroCars = React.lazy(() => import("microCallejero/Cars"));

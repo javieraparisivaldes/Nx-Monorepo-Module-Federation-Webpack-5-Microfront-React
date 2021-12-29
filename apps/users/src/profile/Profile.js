@@ -1,6 +1,6 @@
 import React from "libs/react";
 import { useHistory } from "libs/react-router-dom";
-import "../app/app.module"
+import "../app/app.style"
 import { Input } from "@dipjaen/ui"
 
 const Profile = () => {

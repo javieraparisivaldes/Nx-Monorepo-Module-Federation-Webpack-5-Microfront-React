@@ -3,10 +3,12 @@ import NxWelcome from './nx-welcome';
 
 import { Route, Link } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
+import "./app.style.css"
 
 export function App() {
   return (
     <BrowserRouter>
+    <div className="routing">
       <NxWelcome title="users" />
       <div />
 
@@ -46,6 +48,7 @@ export function App() {
         )}
       />
       {/* END: routes */}
+      </div>
     </BrowserRouter>
   );
 }
