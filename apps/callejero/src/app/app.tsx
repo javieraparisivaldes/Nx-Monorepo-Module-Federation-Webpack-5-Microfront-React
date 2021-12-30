@@ -1,11 +1,20 @@
 
 import NxWelcome from './nx-welcome';
 
-import { Route, Link } from 'react-router-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { Route, Link, BrowserRouter } from 'react-router-dom';
 import "./app.style"
+import getBus from "./bus"
+import { buttonClasses } from '@mui/material';
+// @ts-ignore  
+import {useEffect} from "libs/react";
 
 export function App() {
+
+  useEffect(()=>{
+    const bus = getBus()
+    bus.next({event:"load"})
+  },[])
+
   return (
     <BrowserRouter>
       <div className="routing">

@@ -67,6 +67,7 @@ module.exports = {
         "./Maps": "./apps/callejero/src/maps/Maps",
         "./Cars": "./apps/callejero/src/cars/Cars",
         "./Main": "./apps/callejero/src/app/app",
+        "./bus": "./apps/callejero/src/app/bus",
       },
       remotes: {
         libs: "libs@[libsUrl]/remoteEntry.js",

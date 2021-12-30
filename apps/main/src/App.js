@@ -1,4 +1,4 @@
-import React, { Suspense } from "libs/react";
+import React, { Suspense, useEffect } from "libs/react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,10 +10,19 @@ import "./app.style.css"
 const CallejeroMaps = React.lazy(() => import("microCallejero/Maps"));
 const CallejeroCars = React.lazy(() => import("microCallejero/Cars"));
 const CallejeroMain = React.lazy(() => import("microCallejero/Main"));
-
 const UsersMain = React.lazy(() => import("microUsers/Main"));
+import getBusCallejero from "microCallejero/bus"
+
 
 const App = () => {
+
+  useEffect(()=>{
+    const bus = getBusCallejero();
+    bus.subscribe(()=>{
+      console.log("load micro front callejero!!")
+    })
+  },[])
+
   return (
     <Router>
       <div>
